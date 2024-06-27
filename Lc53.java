@@ -7,18 +7,13 @@ public class Lc53 {
     }
 
     public static int maxSubArray(int[] nums) {
-        if (nums.length == 1) {
-            return nums[0];
-        }
-
-        int index = 0;
-        int maxSum = Integer.MIN_VALUE;
+        int index = 1;
+        int maxSum = nums[0];
         int currSum = nums[0];
 
         while (index < nums.length) {
             if (currSum < 0) {
                 currSum = 0;
-                continue;
             }
 
             currSum += nums[index];
